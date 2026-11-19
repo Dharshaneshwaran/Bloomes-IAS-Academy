@@ -150,6 +150,86 @@ export default function OnlineClasses() {
             >
               <div className="space-y-6">
                 
+                {/* Ad Card - TNPSC Preparation Offer */}
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.1 }}
+                  whileHover={{ scale: 1.03, y: -5 }}
+                  className="bg-gradient-to-br from-pink-500 via-purple-600 to-blue-600 rounded-3xl p-8 shadow-2xl text-white text-center relative overflow-hidden"
+                >
+                  {/* Decorative Elements */}
+                  <motion.div
+                    animate={{ 
+                      scale: [1, 1.2, 1],
+                      rotate: [0, 180, 360]
+                    }}
+                    transition={{ 
+                      duration: 20,
+                      repeat: Infinity,
+                      ease: "linear"
+                    }}
+                    className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl"
+                  ></motion.div>
+
+                  {/* Lightning Icon Badge */}
+                  <motion.div
+                    animate={{ 
+                      y: [0, -10, 0],
+                    }}
+                    transition={{ 
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                    className="inline-flex items-center justify-center w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl mb-4"
+                  >
+                    <span className="text-4xl">⚡</span>
+                  </motion.div>
+
+                  {/* Offer Text */}
+                  <h4 className="text-3xl font-black mb-2">Limited Time Offer!</h4>
+                  <p className="text-white/90 text-lg font-bold mb-6">
+                    Get TNPSC Group I & II<br />Complete Course
+                  </p>
+
+                  {/* Price Box */}
+                  <div className="bg-white/20 backdrop-blur-md rounded-2xl p-6 mb-6 border-2 border-white/30">
+                    <div className="flex items-center justify-center gap-3 mb-2">
+                      <span className="text-white/60 text-xl line-through">₹49,999</span>
+                      <span className="text-5xl font-black">₹24,995</span>
+                    </div>
+                    <p className="text-white/80 text-sm font-medium">50% OFF • Ends in 48 hours</p>
+                  </div>
+
+                  {/* CTA Button */}
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="w-full bg-white text-purple-600 font-black py-4 px-6 rounded-xl text-lg shadow-lg hover:shadow-xl transition-all"
+                  >
+                    Claim Your Spot Now →
+                  </motion.button>
+
+                  {/* Trust Indicators */}
+                  <div className="flex items-center justify-center gap-4 mt-4 text-sm">
+                    <div className="flex items-center gap-1">
+                      <svg className="w-4 h-4 text-green-300" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                      </svg>
+                      <span className="text-white/90 font-semibold">Lifetime Access</span>
+                    </div>
+                    <span className="text-white/40">•</span>
+                    <div className="flex items-center gap-1">
+                      <svg className="w-4 h-4 text-green-300" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                      </svg>
+                      <span className="text-white/90 font-semibold">24/7 Support</span>
+                    </div>
+                  </div>
+                </motion.div>
+                
                 {/* Live Classes Card */}
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
