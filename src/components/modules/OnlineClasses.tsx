@@ -1,187 +1,260 @@
 'use client';
 
 import React from 'react';
+import { motion } from 'framer-motion';
 
 export default function OnlineClasses() {
   return (
-    <section className="py-24 bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50 relative overflow-hidden">
-      {/* Subtle background pattern */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute inset-0" style={{
-          backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(59, 130, 246, 0.15) 1px, transparent 0)',
-          backgroundSize: '40px 40px'
-        }}></div>
-      </div>
+    <section className="py-24 bg-gradient-to-br from-blue-50 via-purple-50 to-white relative overflow-hidden">
+      {/* Animated Background */}
+      <motion.div
+        animate={{ 
+          scale: [1, 1.2, 1],
+          opacity: [0.1, 0.15, 0.1]
+        }}
+        transition={{ 
+          duration: 8,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+        className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-blue-300/20 to-purple-300/20 rounded-full blur-3xl"
+      ></motion.div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             
-            {/* LEFT SECTION - Text & CTA */}
-            <div className="space-y-8">
-              {/* Main Heading */}
-              <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 leading-tight tracking-tight">
-                Start mastering
+            {/* LEFT SECTION - Personal Message */}
+            <motion.div 
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="space-y-8"
+            >
+              {/* Personal Badge */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-5 py-2 rounded-full text-sm font-bold"
+              >
+                <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
+                Join 8,000+ TNPSC Aspirants
+              </motion.div>
+
+              {/* Main Heading - More Personal */}
+              <motion.h2 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="text-5xl md:text-6xl font-black text-gray-900 leading-tight"
+              >
+                Your TNPSC success story
                 <br />
-                <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-emerald-600 bg-clip-text text-transparent">
-                  TNPSC today.
+                <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 bg-clip-text text-transparent">
+                  starts here
                 </span>
-              </h2>
+              </motion.h2>
 
-              {/* Description */}
-              <p className="text-xl text-gray-600 leading-relaxed max-w-xl">
-                Learn, practice, and excel with expert guidance. Join thousands of successful candidates who cracked TNPSC through our proven teaching methodology and comprehensive study materials.
-              </p>
+              {/* Personal Description */}
+              <motion.p 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="text-xl text-gray-600 leading-relaxed"
+              >
+                We understand your dream of serving Tamil Nadu. That's why we've helped 2000+ candidates like you crack TNPSC exams with personalized guidance, expert faculty, and proven strategies.
+              </motion.p>
 
-              {/* CTA Button */}
-              <div>
-                <button className="group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold px-8 py-4 rounded-xl text-lg flex items-center gap-3 transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105">
-                  <span>Get Started</span>
-                  <svg 
-                    className="w-5 h-5 group-hover:translate-x-1 transition-transform" 
-                    fill="none" 
-                    viewBox="0 0 24 24" 
-                    stroke="currentColor"
+              {/* Benefits List */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="space-y-4"
+              >
+                {[
+                  { icon: '🎯', text: 'Personalized study plans designed for YOUR success' },
+                  { icon: '👨‍🏫', text: 'Learn from faculty who cracked TNPSC themselves' },
+                  { icon: '💪', text: 'Practice with 1000+ real exam pattern tests' }
+                ].map((item, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.5 + i * 0.1 }}
+                    className="flex items-center gap-4"
                   >
+                    <div className="text-3xl">{item.icon}</div>
+                    <p className="text-gray-700 font-medium">{item.text}</p>
+                  </motion.div>
+                ))}
+              </motion.div>
+
+              {/* CTA Buttons */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+                className="flex flex-wrap gap-4"
+              >
+                <motion.button 
+                  whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(59, 130, 246, 0.3)" }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold px-8 py-4 rounded-xl text-lg flex items-center gap-3 shadow-lg"
+                >
+                  <span>Start Your Journey</span>
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
-                </button>
-              </div>
-            </div>
+                </motion.button>
+                
+                <motion.button 
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-white text-gray-900 font-bold px-8 py-4 rounded-xl text-lg border-2 border-gray-200 hover:border-blue-600 transition-colors"
+                >
+                  Talk to Our Mentor
+                </motion.button>
+              </motion.div>
+
+              {/* Trust Badge */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 1 }}
+                className="flex items-center gap-2 text-sm text-gray-500"
+              >
+                <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+                <span>No hidden fees • Cancel anytime • 7-day money back guarantee</span>
+              </motion.div>
+            </motion.div>
 
             {/* RIGHT SECTION - Visual Cards */}
-            <div className="relative">
-              {/* Background decorative gradient */}
-              <div className="absolute -inset-4 bg-gradient-to-br from-blue-200/30 via-purple-200/30 to-emerald-200/30 rounded-3xl blur-3xl"></div>
-
-              {/* Main Card Stack */}
-              <div className="relative space-y-6">
+            <motion.div 
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative"
+            >
+              <div className="space-y-6">
                 
-                {/* Card 1 - Stats Overview */}
-                <div className="bg-white/80 backdrop-blur-xl border border-gray-200/50 rounded-2xl p-8 transform hover:scale-105 transition-all duration-300 shadow-xl">
-                  <div className="flex items-center justify-between mb-6">
-                    <span className="text-blue-600 font-bold text-sm tracking-wider">LIVE STATISTICS</span>
-                    <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
-                      <span className="text-gray-500 text-xs">Updated Now</span>
+                {/* Success Stories Card */}
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  whileHover={{ scale: 1.03, y: -5 }}
+                  className="bg-white rounded-3xl p-8 shadow-2xl border border-gray-100"
+                >
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="flex -space-x-3">
+                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full border-4 border-white flex items-center justify-center text-white font-bold">R</div>
+                      <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full border-4 border-white flex items-center justify-center text-white font-bold">P</div>
+                      <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-pink-600 rounded-full border-4 border-white flex items-center justify-center text-white font-bold">A</div>
+                    </div>
+                    <div>
+                      <h4 className="text-gray-900 font-black text-lg">Real Success Stories</h4>
+                      <p className="text-gray-500 text-sm">From students like you</p>
                     </div>
                   </div>
-                  
-                  <div className="grid grid-cols-3 gap-6">
-                    <div>
-                      <div className="text-3xl font-black text-gray-900 mb-1">8.2K</div>
-                      <div className="text-gray-500 text-xs">Active Learners</div>
-                    </div>
-                    <div>
-                      <div className="text-3xl font-black text-emerald-600 mb-1">95%</div>
-                      <div className="text-gray-500 text-xs">Success Rate</div>
-                    </div>
-                    <div>
-                      <div className="text-3xl font-black text-blue-600 mb-1">24/7</div>
-                      <div className="text-gray-500 text-xs">Support</div>
-                    </div>
-                  </div>
-                </div>
 
-                {/* Card 2 - Feature Card with Soft Gradient */}
-                <div className="bg-gradient-to-br from-blue-500 via-purple-500 to-emerald-500 rounded-2xl p-8 transform hover:scale-105 transition-all duration-300 shadow-xl">
                   <div className="space-y-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
-                        <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                        </svg>
-                      </div>
-                      <div>
-                        <h4 className="text-white font-black text-lg">Live HD Classes</h4>
-                        <p className="text-white/80 text-sm">4K quality streaming</p>
-                      </div>
+                    <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-4">
+                      <p className="text-gray-800 font-semibold mb-2">"I cleared Group I in my first attempt!"</p>
+                      <p className="text-gray-600 text-sm">— Priya, Chennai</p>
                     </div>
-                    
-                    <div className="bg-white/20 backdrop-blur-sm rounded-xl p-4 space-y-2">
-                      <div className="flex items-center justify-between text-sm">
-                        <span className="text-white/90">Tamil Medium</span>
-                        <span className="text-white font-bold">Available</span>
-                      </div>
-                      <div className="flex items-center justify-between text-sm">
-                        <span className="text-white/90">English Medium</span>
-                        <span className="text-white font-bold">Available</span>
-                      </div>
-                      <div className="flex items-center justify-between text-sm">
-                        <span className="text-white/90">Recorded Sessions</span>
-                        <span className="text-white font-bold">Lifetime</span>
-                      </div>
+                    <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-4">
+                      <p className="text-gray-800 font-semibold mb-2">"The faculty made complex topics so easy"</p>
+                      <p className="text-gray-600 text-sm">— Rajesh, Coimbatore</p>
                     </div>
                   </div>
-                </div>
+                </motion.div>
 
-                {/* Card 3 - Chat/Testimonial Style */}
-                <div className="bg-white/80 backdrop-blur-xl border border-gray-200/50 rounded-2xl p-6 transform hover:scale-105 transition-all duration-300 shadow-xl">
-                  <div className="space-y-4">
-                    {/* Chat bubble 1 */}
-                    <div className="flex items-start gap-3">
-                      <div className="w-10 h-10 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
-                        <span className="text-white font-bold text-sm">R</span>
-                      </div>
-                      <div className="flex-1">
-                        <div className="bg-gray-100 rounded-2xl rounded-tl-none p-4">
-                          <p className="text-gray-800 text-sm">How do you find the TNPSC classes?</p>
-                        </div>
-                        <p className="text-gray-400 text-xs mt-1 ml-2">Rajesh, Group II Aspirant</p>
-                      </div>
-                    </div>
-
-                    {/* Chat bubble 2 */}
-                    <div className="flex items-start gap-3 justify-end">
-                      <div className="flex-1">
-                        <div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl rounded-tr-none p-4 ml-auto max-w-[85%]">
-                          <p className="text-white text-sm">Excellent! Best faculty and materials. 💯</p>
-                        </div>
-                        <p className="text-gray-400 text-xs mt-1 mr-2 text-right">Priya, Group I Selected</p>
-                      </div>
-                      <div className="w-10 h-10 bg-gradient-to-br from-pink-400 to-pink-600 rounded-full flex items-center justify-center flex-shrink-0">
-                        <span className="text-white font-bold text-sm">P</span>
-                      </div>
-                    </div>
-
-                    {/* Chat bubble 3 */}
-                    <div className="flex items-start gap-3">
-                      <div className="w-10 h-10 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-full flex items-center justify-center flex-shrink-0">
-                        <span className="text-white font-bold text-sm">A</span>
-                      </div>
-                      <div className="flex-1">
-                        <div className="bg-gray-100 rounded-2xl rounded-tl-none p-4">
-                          <p className="text-gray-800 text-sm">The mock tests really helped! 🎯</p>
-                        </div>
-                        <p className="text-gray-400 text-xs mt-1 ml-2">Arun, Group IV Selected</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Card 4 - Globe/Reach Card */}
-                <div className="bg-white/80 backdrop-blur-xl border border-gray-200/50 rounded-2xl p-8 text-center transform hover:scale-105 transition-all duration-300 shadow-xl">
-                  <div className="mb-4">
-                    <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-full mx-auto flex items-center justify-center mb-4">
-                      <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                {/* Live Classes Card */}
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                  whileHover={{ scale: 1.03, y: -5 }}
+                  className="bg-gradient-to-br from-blue-600 via-purple-600 to-blue-700 rounded-3xl p-8 shadow-2xl text-white"
+                >
+                  <div className="flex items-center gap-4 mb-6">
+                    <motion.div
+                      animate={{ scale: [1, 1.1, 1] }}
+                      transition={{ duration: 2, repeat: Infinity }}
+                      className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center"
+                    >
+                      <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z" />
                       </svg>
+                    </motion.div>
+                    <div>
+                      <div className="flex items-center gap-2 mb-1">
+                        <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
+                        <span className="text-white/80 text-sm font-bold">LIVE NOW</span>
+                      </div>
+                      <h4 className="text-white font-black text-xl">350+ students watching</h4>
                     </div>
-                    <h4 className="text-gray-900 font-black text-xl mb-2">All over Tamil Nadu</h4>
-                    <p className="text-gray-600 text-sm">
-                      Join 8,000+ students learning across
-                      <br />
-                      all districts of Tamil Nadu
-                    </p>
                   </div>
-                  <div className="flex items-center justify-center gap-2 text-emerald-600 text-sm font-bold">
-                    <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
-                    <span>Live classes happening now</span>
+
+                  <div className="space-y-3">
+                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
+                      <div className="flex items-center justify-between">
+                        <span className="font-semibold">Group I - Polity</span>
+                        <span className="text-sm bg-white/20 px-3 py-1 rounded-full">Tamil</span>
+                      </div>
+                    </div>
+                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
+                      <div className="flex items-center justify-between">
+                        <span className="font-semibold">Group II - History</span>
+                        <span className="text-sm bg-white/20 px-3 py-1 rounded-full">English</span>
+                      </div>
+                    </div>
                   </div>
-                </div>
+
+                  <div className="mt-6 pt-6 border-t border-white/20">
+                    <p className="text-white/80 text-sm">4K HD Quality • Tamil & English • Lifetime Access</p>
+                  </div>
+                </motion.div>
+
+                {/* Stats Card */}
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                  whileHover={{ scale: 1.03, y: -5 }}
+                  className="bg-white rounded-3xl p-8 shadow-2xl border border-gray-100"
+                >
+                  <h4 className="text-gray-900 font-black text-xl mb-6">Your Success is Our Mission</h4>
+                  <div className="grid grid-cols-2 gap-6">
+                    <div className="text-center">
+                      <div className="text-4xl font-black bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">95%</div>
+                      <div className="text-gray-600 text-sm font-medium">Success Rate</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-4xl font-black bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">24/7</div>
+                      <div className="text-gray-600 text-sm font-medium">Mentor Support</div>
+                    </div>
+                  </div>
+                </motion.div>
 
               </div>
-            </div>
+            </motion.div>
 
           </div>
         </div>
