@@ -6,13 +6,13 @@
 
 @layer base {
   :root {
-    --background: #ffffff;
-    --foreground: #1f2937;
-    --primary: #1e40af;
-    --secondary: #dc2626;
+    --background: #000000;
+    --foreground: #ffffff;
+    --primary: #10b981;
+    --secondary: #3b82f6;
     --accent: #f59e0b;
-    --light: #f3f4f6;
-    --dark: #111827;
+    --light: #111827;
+    --dark: #ffffff;
     
     --color-blue-50: #eff6ff;
     --color-blue-100: #dbeafe;
@@ -47,8 +47,8 @@ html {
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: #000000;
+  color: #ffffff;
   font-family: var(--font-sans);
   line-height: 1.6;
   overflow-x: hidden;
@@ -60,16 +60,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--light);
+  background: #111827;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--primary);
+  background: #10b981;
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-blue-900);
+  background: #059669;
 }
 
 /* Utility Classes */
