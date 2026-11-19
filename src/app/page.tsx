@@ -3,6 +3,7 @@ import AboutSection from '@/components/modules/AboutSection';
 import Features from '@/components/modules/Features';
 import OnlineClasses from '@/components/modules/OnlineClasses';
 import CTASection from '@/components/modules/CTASection';
+import PricingCards from '@/components/modules/PricingCards';
 import { Header, FooterNew } from '@/components/layout';
 import MatrixEducationRain from '@/components/ui/MatrixEducationRain';
 import ParticleConstellation from '@/components/ui/ParticleConstellation';
@@ -17,6 +18,8 @@ export default function Home() {
         <MatrixEducationRain />
         <AboutSection />
         <ParticleConstellation />
+        <PricingCards />
+        <CubeTunnel />
         <Features />
         <CubeTunnel />
         <OnlineClasses />
