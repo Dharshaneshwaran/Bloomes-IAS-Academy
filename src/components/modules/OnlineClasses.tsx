@@ -150,14 +150,14 @@ export default function OnlineClasses() {
             >
               <div className="space-y-6">
                 
-                {/* Ad Card - TNPSC Preparation Offer */}
+                {/* Ad Card - TNPSC Preparation Offer - Compact */}
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.1 }}
                   whileHover={{ scale: 1.03, y: -5 }}
-                  className="bg-gradient-to-br from-pink-500 via-purple-600 to-blue-600 rounded-3xl p-8 shadow-2xl text-white text-center relative overflow-hidden"
+                  className="bg-gradient-to-br from-pink-500 via-purple-600 to-blue-600 rounded-2xl p-6 shadow-2xl text-white relative overflow-hidden"
                 >
                   {/* Decorative Elements */}
                   <motion.div
@@ -170,63 +170,94 @@ export default function OnlineClasses() {
                       repeat: Infinity,
                       ease: "linear"
                     }}
-                    className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl"
+                    className="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full blur-2xl"
                   ></motion.div>
 
-                  {/* Lightning Icon Badge */}
-                  <motion.div
-                    animate={{ 
-                      y: [0, -10, 0],
-                    }}
-                    transition={{ 
-                      duration: 2,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }}
-                    className="inline-flex items-center justify-center w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl mb-4"
-                  >
-                    <span className="text-4xl">⚡</span>
-                  </motion.div>
-
-                  {/* Offer Text */}
-                  <h4 className="text-3xl font-black mb-2">Limited Time Offer!</h4>
-                  <p className="text-white/90 text-lg font-bold mb-6">
-                    Get TNPSC Group I & II<br />Complete Course
-                  </p>
-
-                  {/* Price Box */}
-                  <div className="bg-white/20 backdrop-blur-md rounded-2xl p-6 mb-6 border-2 border-white/30">
-                    <div className="flex items-center justify-center gap-3 mb-2">
-                      <span className="text-white/60 text-xl line-through">₹49,999</span>
-                      <span className="text-5xl font-black">₹24,995</span>
+                  <div className="relative z-10">
+                    {/* Badge */}
+                    <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold mb-3">
+                      <span>⚡</span>
+                      <span>LIMITED OFFER</span>
                     </div>
-                    <p className="text-white/80 text-sm font-medium">50% OFF • Ends in 48 hours</p>
+
+                    {/* Offer */}
+                    <h4 className="text-2xl font-black mb-3">Get 50% OFF Today!</h4>
+                    
+                    {/* Price */}
+                    <div className="flex items-center gap-3 mb-4">
+                      <span className="text-white/60 text-lg line-through">₹49,999</span>
+                      <span className="text-3xl font-black">₹24,995</span>
+                    </div>
+
+                    {/* CTA */}
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="w-full bg-white text-purple-600 font-bold py-3 px-4 rounded-xl text-sm shadow-lg"
+                    >
+                      Claim Offer Now →
+                    </motion.button>
+                  </div>
+                </motion.div>
+
+                {/* Stats Achievement Card */}
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.15 }}
+                  whileHover={{ scale: 1.03, y: -5 }}
+                  className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-6 shadow-xl border border-gray-200"
+                >
+                  <h4 className="text-gray-900 font-black text-lg mb-4 text-center">Our Track Record</h4>
+                  
+                  <div className="grid grid-cols-3 gap-4">
+                    {/* Stat 1 */}
+                    <motion.div
+                      whileHover={{ scale: 1.1 }}
+                      className="text-center"
+                    >
+                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-2 shadow-lg">
+                        <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                          <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
+                        </svg>
+                      </div>
+                      <div className="text-2xl font-black bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">2000+</div>
+                      <div className="text-xs text-gray-600 font-medium">Selections</div>
+                    </motion.div>
+
+                    {/* Stat 2 */}
+                    <motion.div
+                      whileHover={{ scale: 1.1 }}
+                      className="text-center"
+                    >
+                      <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-2 shadow-lg">
+                        <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                          <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z" />
+                        </svg>
+                      </div>
+                      <div className="text-2xl font-black bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">50+</div>
+                      <div className="text-xs text-gray-600 font-medium">Faculty</div>
+                    </motion.div>
+
+                    {/* Stat 3 */}
+                    <motion.div
+                      whileHover={{ scale: 1.1 }}
+                      className="text-center"
+                    >
+                      <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-pink-600 rounded-xl flex items-center justify-center mx-auto mb-2 shadow-lg">
+                        <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                          <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
+                        </svg>
+                      </div>
+                      <div className="text-2xl font-black bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">450+</div>
+                      <div className="text-xs text-gray-600 font-medium">Group I & II</div>
+                    </motion.div>
                   </div>
 
-                  {/* CTA Button */}
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="w-full bg-white text-purple-600 font-black py-4 px-6 rounded-xl text-lg shadow-lg hover:shadow-xl transition-all"
-                  >
-                    Claim Your Spot Now →
-                  </motion.button>
-
-                  {/* Trust Indicators */}
-                  <div className="flex items-center justify-center gap-4 mt-4 text-sm">
-                    <div className="flex items-center gap-1">
-                      <svg className="w-4 h-4 text-green-300" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                      </svg>
-                      <span className="text-white/90 font-semibold">Lifetime Access</span>
-                    </div>
-                    <span className="text-white/40">•</span>
-                    <div className="flex items-center gap-1">
-                      <svg className="w-4 h-4 text-green-300" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                      </svg>
-                      <span className="text-white/90 font-semibold">24/7 Support</span>
-                    </div>
+                  {/* Bottom text */}
+                  <div className="mt-4 pt-4 border-t border-gray-200 text-center">
+                    <p className="text-blue-600 text-sm font-bold">Where Knowledge Flows Continuously</p>
                   </div>
                 </motion.div>
                 
