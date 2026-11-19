@@ -8,6 +8,7 @@ import { Header, FooterNew } from '@/components/layout';
 import MatrixEducationRain from '@/components/ui/MatrixEducationRain';
 import ParticleConstellation from '@/components/ui/ParticleConstellation';
 import CubeTunnel from '@/components/ui/CubeTunnel';
+import StatsBanner from '@/components/ui/StatsBanner';
 
 export default function Home() {
   return (
@@ -15,15 +16,15 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <Hero />
-        <MatrixEducationRain />
+        <StatsBanner variant="blue" />
         <AboutSection />
         <ParticleConstellation />
         <PricingCards />
-        <CubeTunnel />
+        <StatsBanner variant="purple" />
         <Features />
         <CubeTunnel />
         <OnlineClasses />
-        <MatrixEducationRain />
+        <StatsBanner variant="emerald" />
         <CTASection />
       </main>
       <FooterNew />
