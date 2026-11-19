@@ -5,13 +5,12 @@ import OnlineClasses from '@/components/modules/OnlineClasses';
 import CTASection from '@/components/modules/CTASection';
 import PricingCards from '@/components/modules/PricingCards';
 import { Header, FooterNew } from '@/components/layout';
-import MatrixEducationRain from '@/components/ui/MatrixEducationRain';
-import ParticleConstellation from '@/components/ui/ParticleConstellation';
-import CubeTunnel from '@/components/ui/CubeTunnel';
 import StatsBanner from '@/components/ui/StatsBanner';
 import FoundationBanner from '@/components/ui/FoundationBanner';
 import GeometricStats from '@/components/ui/GeometricStats';
 import OnlineClassesPromo from '@/components/ui/OnlineClassesPromo';
+import StudyMaterialsShowcase from '@/components/ui/StudyMaterialsShowcase';
+import CourseBenefits from '@/components/ui/CourseBenefits';
 
 export default function Home() {
   return (
@@ -23,12 +22,12 @@ export default function Home() {
         <AboutSection />
         <GeometricStats />
         <OnlineClassesPromo />
-        <ParticleConstellation />
+        <StudyMaterialsShowcase />
         <PricingCards />
         <FoundationBanner />
+        <CourseBenefits />
         <StatsBanner variant="purple" />
         <Features />
-        <CubeTunnel />
         <OnlineClasses />
         <StatsBanner variant="emerald" />
         <CTASection />
