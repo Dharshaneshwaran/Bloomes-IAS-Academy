@@ -11,6 +11,7 @@ import CubeTunnel from '@/components/ui/CubeTunnel';
 import StatsBanner from '@/components/ui/StatsBanner';
 import FoundationBanner from '@/components/ui/FoundationBanner';
 import GeometricStats from '@/components/ui/GeometricStats';
+import OnlineClassesPromo from '@/components/ui/OnlineClassesPromo';
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
         <StatsBanner variant="blue" />
         <AboutSection />
         <GeometricStats />
+        <OnlineClassesPromo />
         <ParticleConstellation />
         <PricingCards />
         <FoundationBanner />
