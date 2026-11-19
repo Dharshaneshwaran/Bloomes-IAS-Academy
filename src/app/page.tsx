@@ -9,6 +9,8 @@ import MatrixEducationRain from '@/components/ui/MatrixEducationRain';
 import ParticleConstellation from '@/components/ui/ParticleConstellation';
 import CubeTunnel from '@/components/ui/CubeTunnel';
 import StatsBanner from '@/components/ui/StatsBanner';
+import FoundationBanner from '@/components/ui/FoundationBanner';
+import GeometricStats from '@/components/ui/GeometricStats';
 
 export default function Home() {
   return (
@@ -18,8 +20,10 @@ export default function Home() {
         <Hero />
         <StatsBanner variant="blue" />
         <AboutSection />
+        <GeometricStats />
         <ParticleConstellation />
         <PricingCards />
+        <FoundationBanner />
         <StatsBanner variant="purple" />
         <Features />
         <CubeTunnel />
