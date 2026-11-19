@@ -7,173 +7,201 @@ export default function OnlineClasses() {
     <section className="py-20 bg-black relative overflow-hidden">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-12">
-          <div className="inline-block bg-emerald-400 text-black px-5 py-2 rounded-full text-xs font-bold tracking-widest mb-6">
-            ONLINE PLATFORM
+        <div className="text-center mb-16">
+          <div className="inline-block bg-gradient-to-r from-emerald-400 to-blue-500 text-black px-6 py-2 rounded-full text-xs font-black tracking-widest mb-6">
+            PREMIUM LEARNING
           </div>
-          <h2 className="text-4xl md:text-5xl font-black text-white mb-4 tracking-tight leading-tight">
-            Study From Home with
+          <h2 className="text-5xl md:text-6xl font-black text-white mb-5 tracking-tight leading-tight">
+            Master TNPSC from
             <br />
-            <span className="text-emerald-400">Live Online Classes</span>
+            <span className="bg-gradient-to-r from-emerald-400 via-blue-400 to-purple-500 bg-clip-text text-transparent">
+              Anywhere, Anytime
+            </span>
           </h2>
-          <p className="text-gray-400 text-base max-w-2xl mx-auto">
-            Experience TNPSC coaching from home with our advanced online platform
+          <p className="text-gray-400 text-lg max-w-3xl mx-auto leading-relaxed">
+            Join India's most advanced TNPSC preparation platform with live classes,
+            <br />
+            expert mentorship, and proven results
           </p>
         </div>
 
-        {/* Main Card - Pluto Style with diagonal pattern */}
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-5 border-2 border-white/10 rounded-2xl overflow-hidden shadow-2xl">
+        {/* Main Card - New Design */}
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             
-            {/* LEFT - Blue Section with Diagonal Pattern Overlay */}
-            <div className="lg:col-span-2 bg-gradient-to-br from-blue-600 via-blue-500 to-blue-700 p-10 relative overflow-hidden">
-              {/* Diagonal Pattern Overlay - Pluto Style */}
-              <div className="absolute inset-0 opacity-20" style={{
-                backgroundImage: `repeating-linear-gradient(
-                  45deg,
-                  rgba(255, 255, 255, 0.05) 0px,
-                  rgba(255, 255, 255, 0.05) 10px,
-                  transparent 10px,
-                  transparent 20px
-                )`
-              }}></div>
-
-              {/* Glassmorphism overlay */}
-              <div className="absolute inset-0 backdrop-blur-sm bg-white/5"></div>
+            {/* LEFT CARD - Feature Highlights */}
+            <div className="bg-gradient-to-br from-gray-900 to-black border border-white/10 rounded-3xl p-10 relative overflow-hidden group hover:border-emerald-400/50 transition-all duration-300">
+              {/* Animated gradient background */}
+              <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 via-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              {/* Glow effect */}
+              <div className="absolute -top-40 -right-40 w-80 h-80 bg-emerald-400/20 rounded-full blur-3xl"></div>
 
               <div className="relative z-10">
-                {/* Live Badge with pulse */}
-                <div className="mb-8 inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-2 rounded-full border border-white/30">
-                  <div className="relative flex h-3 w-3">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
-                  </div>
-                  <span className="text-white text-xs font-bold tracking-widest">LIVE NOW</span>
+                {/* Badge */}
+                <div className="mb-8">
+                  <span className="bg-emerald-400/10 text-emerald-400 px-4 py-2 rounded-lg text-xs font-bold tracking-wider border border-emerald-400/20">
+                    LIVE SESSIONS ONGOING
+                  </span>
                 </div>
 
                 {/* Title */}
-                <h3 className="text-white text-3xl font-black mb-4 tracking-tight leading-tight">
-                  Interactive Online
+                <h3 className="text-white text-3xl font-black mb-4 leading-tight">
+                  Tamil Nadu's Most
                   <br />
-                  Coaching
+                  Trusted Platform
                 </h3>
-                <p className="text-blue-100 text-sm font-medium mb-10 leading-relaxed">
-                  Join thousands learning through our
-                  <br />
-                  cutting-edge platform
+                <p className="text-gray-400 text-base mb-10 leading-relaxed">
+                  Experience interactive learning with our state-of-the-art
+                  technology and expert faculty team
                 </p>
 
-                {/* Stats Grid - Pluto Style */}
-                <div className="grid grid-cols-2 gap-4 mb-12">
-                  <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
-                    <div className="text-white text-4xl font-black mb-1">5000+</div>
-                    <div className="text-blue-100 text-xs font-bold tracking-wider">STUDENTS</div>
-                  </div>
-                  <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
-                    <div className="text-white text-4xl font-black mb-1">1000+</div>
-                    <div className="text-blue-100 text-xs font-bold tracking-wider">HOURS</div>
-                  </div>
+                {/* Key Features with Icons */}
+                <div className="space-y-5 mb-10">
+                  {[
+                    { 
+                      icon: '🎥',
+                      title: '4K HD Live Classes',
+                      desc: 'Crystal clear streaming'
+                    },
+                    { 
+                      icon: '👨‍🏫',
+                      title: 'Expert Tamil Faculty',
+                      desc: '15+ years experience'
+                    },
+                    { 
+                      icon: '📱',
+                      title: 'Mobile App Access',
+                      desc: 'Learn on the go'
+                    },
+                    { 
+                      icon: '🏆',
+                      title: '95% Success Rate',
+                      desc: 'Proven track record'
+                    }
+                  ].map((feature, i) => (
+                    <div key={i} className="flex items-center gap-4 bg-white/5 backdrop-blur-sm rounded-xl p-4 hover:bg-white/10 transition-all duration-200 border border-white/5">
+                      <div className="text-3xl">{feature.icon}</div>
+                      <div>
+                        <h5 className="text-white font-bold text-sm">{feature.title}</h5>
+                        <p className="text-gray-400 text-xs">{feature.desc}</p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
 
-                {/* Watch Demo Button - Glassmorphism */}
-                <button className="w-full bg-white/20 backdrop-blur-md border-2 border-white/30 text-white font-black py-4 px-6 rounded-xl flex items-center justify-center gap-3 hover:bg-white hover:text-blue-600 transition-all duration-300 group">
-                  <div className="w-12 h-12 bg-white/20 group-hover:bg-blue-600 rounded-full flex items-center justify-center transition-all duration-300 border border-white/30">
-                    <svg className="w-5 h-5 text-white ml-0.5" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/>
-                    </svg>
+                {/* Stats Row */}
+                <div className="grid grid-cols-3 gap-4 pt-8 border-t border-white/10">
+                  <div>
+                    <div className="text-emerald-400 text-2xl font-black">8K+</div>
+                    <div className="text-gray-500 text-xs font-medium">Active Students</div>
                   </div>
-                  <span className="tracking-wider">WATCH DEMO</span>
-                </button>
+                  <div>
+                    <div className="text-blue-400 text-2xl font-black">500+</div>
+                    <div className="text-gray-500 text-xs font-medium">Selections</div>
+                  </div>
+                  <div>
+                    <div className="text-purple-400 text-2xl font-black">24/7</div>
+                    <div className="text-gray-500 text-xs font-medium">Support</div>
+                  </div>
+                </div>
               </div>
             </div>
 
-            {/* RIGHT - White Section */}
-            <div className="lg:col-span-3 bg-white p-10">
-              {/* Features Icons - 2x2 Grid */}
-              <div className="grid grid-cols-2 gap-6 mb-8">
-                {/* Feature 1 */}
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 bg-blue-600 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
-                    <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
+            {/* RIGHT CARD - Pricing/Enrollment */}
+            <div className="bg-white rounded-3xl p-10 relative overflow-hidden shadow-2xl">
+              {/* Decorative elements */}
+              <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-emerald-100 to-blue-100 rounded-full blur-3xl opacity-50"></div>
+              
+              <div className="relative z-10">
+                {/* Plan Badge */}
+                <div className="mb-6">
+                  <span className="bg-gradient-to-r from-emerald-400 to-blue-500 text-white px-5 py-2 rounded-full text-xs font-black tracking-wider">
+                    PREMIUM ANNUAL PLAN
+                  </span>
+                </div>
+
+                {/* Price */}
+                <div className="mb-8">
+                  <div className="flex items-baseline gap-2 mb-2">
+                    <span className="text-5xl font-black text-gray-900">₹19,999</span>
+                    <span className="text-gray-400 line-through text-xl">₹35,000</span>
                   </div>
-                  <div>
-                    <h5 className="font-black text-gray-900 text-base mb-1">Live Interactive Sessions</h5>
-                    <p className="text-gray-600 text-sm">Real-time two-way communication</p>
+                  <p className="text-emerald-600 font-bold text-sm">Save ₹15,001 • Limited Time Offer</p>
+                </div>
+
+                {/* What's Included */}
+                <div className="mb-8">
+                  <h4 className="text-gray-900 font-black text-lg mb-5">What's Included:</h4>
+                  <div className="space-y-3">
+                    {[
+                      'Unlimited live classes access',
+                      'Tamil & English medium options',
+                      'Daily mock tests & practice',
+                      'Personalized study roadmap',
+                      'Interview preparation sessions',
+                      'Previous 10 years question bank',
+                      'Doubt clearing within 2 hours',
+                      'Mobile + Web app access'
+                    ].map((item, i) => (
+                      <div key={i} className="flex items-start gap-3">
+                        <div className="w-6 h-6 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <svg className="w-4 h-4 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                          </svg>
+                        </div>
+                        <span className="text-gray-700 text-sm font-medium">{item}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
 
-                {/* Feature 2 */}
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 bg-blue-600 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
-                    <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                {/* CTA Buttons */}
+                <div className="space-y-3">
+                  <button className="w-full bg-gradient-to-r from-emerald-500 to-blue-600 text-white font-black py-5 px-6 text-base tracking-wide rounded-xl hover:from-emerald-600 hover:to-blue-700 transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105 transform">
+                    START LEARNING NOW →
+                  </button>
+                  <button className="w-full border-2 border-gray-200 text-gray-900 font-bold py-5 px-6 rounded-xl hover:border-gray-900 hover:bg-gray-50 transition-all duration-200 flex items-center justify-center gap-2">
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/>
                     </svg>
-                  </div>
-                  <div>
-                    <h5 className="font-black text-gray-900 text-base mb-1">HD Video Quality</h5>
-                    <p className="text-gray-600 text-sm">Crystal clear lectures</p>
-                  </div>
+                    <span>WATCH DEMO CLASS</span>
+                  </button>
                 </div>
 
-                {/* Feature 3 */}
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 bg-blue-600 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
-                    <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h5 className="font-black text-gray-900 text-base mb-1">Flexible Timings</h5>
-                    <p className="text-gray-600 text-sm">Learn at your convenience</p>
-                  </div>
-                </div>
-
-                {/* Feature 4 */}
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 bg-blue-600 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
-                    <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h5 className="font-black text-gray-900 text-base mb-1">Instant Doubt Clearing</h5>
-                    <p className="text-gray-600 text-sm">Ask questions live</p>
-                  </div>
+                {/* Trust Badge */}
+                <div className="mt-6 pt-6 border-t border-gray-200 flex items-center justify-center gap-2 text-gray-500 text-xs">
+                  <svg className="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <span className="font-medium">100% Money Back Guarantee • 7 Days Trial</span>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
 
-              {/* Checklist - Clean modern style */}
-              <div className="grid grid-cols-2 gap-3 mb-10">
-                {[
-                  'Access from anywhere',
-                  'Recorded sessions',
-                  'Digital materials',
-                  'Online tests',
-                  'Regular assessments',
-                  '24/7 support'
-                ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-3">
-                    <div className="w-5 h-5 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0">
-                      <svg className="w-3 h-3 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <span className="text-gray-700 text-sm font-medium">{item}</span>
-                  </div>
-                ))}
+        {/* Bottom Info Banner */}
+        <div className="max-w-7xl mx-auto mt-12 bg-gradient-to-r from-emerald-500/10 via-blue-500/10 to-purple-500/10 border border-white/10 rounded-2xl p-6">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 bg-emerald-400 rounded-full flex items-center justify-center">
+                <svg className="w-6 h-6 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
               </div>
-
-              {/* Action Buttons - Modern Fintech Style */}
-              <div className="flex gap-4">
-                <button className="flex-1 bg-blue-600 text-white font-bold py-4 px-6 text-base tracking-wide rounded-xl hover:bg-blue-700 transition-all duration-200 shadow-lg hover:shadow-xl">
-                  ENROLL NOW
-                </button>
-                <button className="px-8 border-2 border-gray-200 text-gray-900 font-bold rounded-xl hover:border-blue-600 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200">
-                  FREE DEMO
-                </button>
+              <div>
+                <p className="text-white font-bold">Limited Time Offer!</p>
+                <p className="text-gray-400 text-sm">Only 23 seats remaining this batch</p>
               </div>
+            </div>
+            <div className="flex items-center gap-4">
+              <a href="tel:9003190030" className="text-emerald-400 hover:text-emerald-300 font-bold flex items-center gap-2">
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                <span>Call: 90031 90030</span>
+              </a>
             </div>
           </div>
         </div>
