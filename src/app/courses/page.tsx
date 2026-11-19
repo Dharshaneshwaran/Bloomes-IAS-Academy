@@ -5,6 +5,8 @@ import { Header, FooterNew } from '@/components/layout';
 import { Section, SectionHeader } from '@/components/ui';
 import CourseCard from '@/components/modules/CourseCard';
 import { courses } from '@/data/courses';
+import ParticleConstellation from '@/components/ui/ParticleConstellation';
+import CubeTunnel from '@/components/ui/CubeTunnel';
 
 export default function CoursesPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
@@ -33,6 +35,8 @@ export default function CoursesPage() {
             </div>
           </div>
         </section>
+
+        <ParticleConstellation />
 
         {/* Course Filters */}
         <Section background="white" padding="md">
@@ -74,6 +78,8 @@ export default function CoursesPage() {
             </div>
           )}
         </Section>
+
+        <CubeTunnel />
 
         {/* CTA Section */}
         <section className="bg-gradient-to-br from-[var(--primary)] to-[var(--color-blue-900)] text-white py-16">

@@ -2,6 +2,8 @@ import React from 'react';
 import { Header, FooterNew } from '@/components/layout';
 import { Section, SectionHeader, Card, AnimatedBackground } from '@/components/ui';
 import { FiTarget, FiEye, FiHeart, FiAward, FiUsers, FiBookOpen } from 'react-icons/fi';
+import MatrixEducationRain from '@/components/ui/MatrixEducationRain';
+import CubeTunnel from '@/components/ui/CubeTunnel';
 
 export default function AboutPage() {
   const values = [
@@ -131,6 +133,8 @@ export default function AboutPage() {
           </div>
         </Section>
 
+        <MatrixEducationRain />
+
         {/* Mission & Vision */}
         <Section background="light">
           <AnimatedBackground density="light" theme="mixed" />
@@ -223,6 +227,8 @@ export default function AboutPage() {
             </div>
           </div>
         </Section>
+
+        <CubeTunnel />
 
         {/* Leadership Team */}
         <Section background="white">

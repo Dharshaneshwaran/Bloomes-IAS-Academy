@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { Suspense } from 'react';
 import { useParams } from 'next/navigation';
 import { Header, FooterNew } from '@/components/layout';
 import { Button, Section, Card } from '@/components/ui';
@@ -8,7 +8,7 @@ import { courses } from '@/data/courses';
 import { FiClock, FiBarChart, FiCheckCircle, FiArrowLeft, FiPhone, FiMail } from 'react-icons/fi';
 import Link from 'next/link';
 
-export default function CourseDetailPage() {
+function CourseContent() {
   const params = useParams();
   const courseId = params?.id as string;
   
@@ -30,7 +30,7 @@ export default function CourseDetailPage() {
             </div>
           </Section>
         </main>
-        <Footer />
+        <FooterNew />
       </>
     );
   }
@@ -265,5 +265,20 @@ export default function CourseDetailPage() {
       </main>
       <FooterNew />
     </>
+  );
+}
+
+export default function CourseDetailPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading course...</p>
+        </div>
+      </div>
+    }>
+      <CourseContent />
+    </Suspense>
   );
 }
