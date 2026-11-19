@@ -224,7 +224,7 @@ export default function OnlineClassesPromo() {
                   className="flex items-center gap-4 bg-white rounded-full py-3 px-6 shadow-lg border-2 border-gray-100"
                 >
                   <div className="text-right">
-                    <div className="text-sm font-black text-gray-900">UPSC/TNPSC/Banking</div>
+                    <div className="text-sm font-black text-gray-900">TNPSC All Groups</div>
                   </div>
                   <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-red-600 rounded-full flex items-center justify-center flex-shrink-0">
                     <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
