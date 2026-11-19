@@ -150,7 +150,7 @@ export default function OnlineClasses() {
             >
               <div className="space-y-6">
                 
-                {/* Success Stories Card */}
+                {/* Step-by-Step Process Card */}
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -159,27 +159,83 @@ export default function OnlineClasses() {
                   whileHover={{ scale: 1.03, y: -5 }}
                   className="bg-white rounded-3xl p-8 shadow-2xl border border-gray-100"
                 >
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="flex -space-x-3">
-                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full border-4 border-white flex items-center justify-center text-white font-bold">R</div>
-                      <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full border-4 border-white flex items-center justify-center text-white font-bold">P</div>
-                      <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-pink-600 rounded-full border-4 border-white flex items-center justify-center text-white font-bold">A</div>
-                    </div>
-                    <div>
-                      <h4 className="text-gray-900 font-black text-lg">Real Success Stories</h4>
-                      <p className="text-gray-500 text-sm">From students like you</p>
-                    </div>
+                  <h4 className="text-gray-900 font-black text-2xl mb-6">How It Works</h4>
+
+                  <div className="space-y-6">
+                    {/* Step 1 */}
+                    <motion.div
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: 0.3 }}
+                      className="flex items-start gap-4"
+                    >
+                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white font-black text-lg flex-shrink-0 shadow-lg">
+                        1
+                      </div>
+                      <div className="flex-1 pt-1">
+                        <h5 className="text-gray-900 font-bold text-lg mb-1">Choose Your Course</h5>
+                        <p className="text-gray-600 text-sm">Select Group I, II, or IV based on your goal</p>
+                      </div>
+                    </motion.div>
+
+                    {/* Step 2 */}
+                    <motion.div
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: 0.4 }}
+                      className="flex items-start gap-4"
+                    >
+                      <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center text-white font-black text-lg flex-shrink-0 shadow-lg">
+                        2
+                      </div>
+                      <div className="flex-1 pt-1">
+                        <h5 className="text-gray-900 font-bold text-lg mb-1">Get Personalized Plan</h5>
+                        <p className="text-gray-600 text-sm">Receive a custom study schedule designed for you</p>
+                      </div>
+                    </motion.div>
+
+                    {/* Step 3 */}
+                    <motion.div
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: 0.5 }}
+                      className="flex items-start gap-4"
+                    >
+                      <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-pink-600 rounded-full flex items-center justify-center text-white font-black text-lg flex-shrink-0 shadow-lg">
+                        3
+                      </div>
+                      <div className="flex-1 pt-1">
+                        <h5 className="text-gray-900 font-bold text-lg mb-1">Start Learning</h5>
+                        <p className="text-gray-600 text-sm">Access live classes, materials & mock tests instantly</p>
+                      </div>
+                    </motion.div>
+
+                    {/* Step 4 */}
+                    <motion.div
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: 0.6 }}
+                      className="flex items-start gap-4"
+                    >
+                      <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center text-white font-black text-lg flex-shrink-0 shadow-lg">
+                        4
+                      </div>
+                      <div className="flex-1 pt-1">
+                        <h5 className="text-gray-900 font-bold text-lg mb-1">Crack TNPSC</h5>
+                        <p className="text-gray-600 text-sm">Get continuous support until you achieve success</p>
+                      </div>
+                    </motion.div>
                   </div>
 
-                  <div className="space-y-4">
-                    <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-4">
-                      <p className="text-gray-800 font-semibold mb-2">"I cleared Group I in my first attempt!"</p>
-                      <p className="text-gray-600 text-sm">— Priya, Chennai</p>
-                    </div>
-                    <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-4">
-                      <p className="text-gray-800 font-semibold mb-2">"The faculty made complex topics so easy"</p>
-                      <p className="text-gray-600 text-sm">— Rajesh, Coimbatore</p>
-                    </div>
+                  {/* Bottom CTA */}
+                  <div className="mt-8 pt-6 border-t border-gray-200">
+                    <p className="text-center text-gray-600 text-sm font-medium">
+                      ⚡ Start your journey in just <span className="text-blue-600 font-bold">2 minutes</span>
+                    </p>
                   </div>
                 </motion.div>
 
