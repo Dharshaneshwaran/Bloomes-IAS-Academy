@@ -4,7 +4,7 @@ import React from 'react';
 
 export default function PricingCards() {
   return (
-    <section className="py-20 bg-black relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50 relative overflow-hidden">
       {/* Diagonal stripe background pattern like Motion+ */}
       <div className="absolute top-0 left-0 w-64 h-64 opacity-10">
         <div className="absolute inset-0" style={{
@@ -15,15 +15,15 @@ export default function PricingCards() {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-block bg-emerald-400 text-black px-4 py-1.5 rounded-full text-xs font-bold tracking-wider mb-4">
+          <div className="inline-block bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-1.5 rounded-full text-xs font-bold tracking-wider mb-4">
             BLOOMS+ COURSES
           </div>
-          <h2 className="text-5xl md:text-6xl font-black text-white mb-4 tracking-tight">
+          <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-4 tracking-tight">
             Master TNPSC with
             <br />
-            <span className="text-emerald-400">Blooms Academy+</span>
+            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Blooms Academy+</span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-3xl mx-auto">
+          <p className="text-gray-600 text-lg max-w-3xl mx-auto">
             Learn from experts, practice with real tests, and get the materials you need.
             <br />
             One-time payment gives you lifetime access to all updates and materials.
