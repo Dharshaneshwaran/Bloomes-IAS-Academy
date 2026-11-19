@@ -32,6 +32,11 @@ module.exports = {
       },
       fontFamily: {
         sans: ['IBM Plex Sans', 'sans-serif'],
+        display: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+      },
+      letterSpacing: {
+        tighter: '-0.05em',
+        tight: '-0.03em',
       },
     },
   },
