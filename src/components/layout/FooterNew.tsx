@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaXTwitter, FaYoutube } from 'react-icons/fa6';
 import { SITE_CONFIG, SOCIAL_LINKS } from '@/constants';
+import CopyrightYear from './CopyrightYear';
 
 type Column = { heading: string; links: { label: string; href: string }[] };
 
@@ -69,7 +70,6 @@ function FooterColumn({ column }: { column: Column }) {
 }
 
 export default function FooterNew() {
-  const year = new Date().getFullYear();
   const address = SITE_CONFIG.address.replace(`${SITE_CONFIG.name}, `, '');
   const tel = SITE_CONFIG.phone.replace(/\s/g, '');
 
@@ -142,7 +142,7 @@ export default function FooterNew() {
         {/* Legal bar */}
         <div className="flex flex-col gap-2 border-t border-white/20 py-6 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-[14px] font-medium text-white">
-            © {year} {SITE_CONFIG.name}
+            © <CopyrightYear /> {SITE_CONFIG.name}
           </p>
           <p className="text-[13px] text-white/70">Coaching for TNPSC Group I, II, IIA, IV and VAO</p>
         </div>
