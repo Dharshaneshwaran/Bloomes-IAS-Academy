@@ -1,252 +1,152 @@
-'use client';
-
-import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { FiFacebook, FiTwitter, FiInstagram, FiYoutube, FiLinkedin, FiPhone, FiMail, FiMapPin } from 'react-icons/fi';
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaXTwitter, FaYoutube } from 'react-icons/fa6';
 import { SITE_CONFIG, SOCIAL_LINKS } from '@/constants';
-import CinematicSection from './CinematicSection';
+
+type Column = { heading: string; links: { label: string; href: string }[] };
+
+// Only routes that exist in src/app. Course ids match src/data/courses.ts.
+const columns: Column[] = [
+  {
+    heading: 'TNPSC courses',
+    links: [
+      { label: 'Group I Prelims & Mains', href: '/courses/1' },
+      { label: 'Group II Prelims', href: '/courses/2' },
+      { label: 'Group II & IIA combined', href: '/courses/3' },
+      { label: 'Group IV crash course', href: '/courses/4' },
+      { label: 'VAO', href: '/courses/5' },
+    ],
+  },
+  {
+    heading: 'Practice',
+    links: [
+      { label: 'Test series, all groups', href: '/courses/7' },
+      { label: 'Group I Mains crash course', href: '/courses/6' },
+      { label: 'Interview guidance', href: '/courses/8' },
+      { label: 'All courses', href: '/courses' },
+    ],
+  },
+  {
+    heading: 'Academy',
+    links: [
+      { label: 'About us', href: '/about' },
+      { label: 'Results', href: '/achievements' },
+      { label: 'Student voices', href: '/testimonials' },
+      { label: 'Contact', href: '/contact' },
+    ],
+  },
+];
+
+// Icons render only once a real profile URL replaces '#' in src/constants.
+const social = [
+  { name: 'YouTube', href: SOCIAL_LINKS.youtube, Icon: FaYoutube },
+  { name: 'Instagram', href: SOCIAL_LINKS.instagram, Icon: FaInstagram },
+  { name: 'Facebook', href: SOCIAL_LINKS.facebook, Icon: FaFacebookF },
+  { name: 'LinkedIn', href: SOCIAL_LINKS.linkedin, Icon: FaLinkedinIn },
+  { name: 'X', href: SOCIAL_LINKS.twitter, Icon: FaXTwitter },
+].filter((s) => s.href && s.href !== '#');
+
+const focusRing =
+  'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white';
+
+const linkClass = `flex min-h-11 items-center rounded-sm py-2 text-[14px] leading-5 text-white/80 underline-offset-4 transition-colors duration-150 hover:text-white hover:underline md:min-h-8 motion-reduce:transition-none ${focusRing}`;
+
+const headingClass =
+  'mb-2 font-heading text-[15px] font-semibold leading-6 tracking-normal text-white';
+
+function FooterColumn({ column }: { column: Column }) {
+  return (
+    <div className="min-w-0">
+      <h2 className={headingClass}>{column.heading}</h2>
+      <nav aria-label={column.heading} className="flex flex-col">
+        {column.links.map((l) => (
+          <Link key={l.href} href={l.href} className={linkClass}>
+            {l.label}
+          </Link>
+        ))}
+      </nav>
+    </div>
+  );
+}
 
 export default function FooterNew() {
-  const [currentYear, setCurrentYear] = useState(2026);
-
-  useEffect(() => {
-    setCurrentYear(new Date().getFullYear());
-  }, []);
-
-  const quickLinks = [
-    { label: 'Home', href: '/' },
-    { label: 'About Us', href: '/about' },
-    { label: 'Courses', href: '/courses' },
-    { label: 'Faculty', href: '/faculty' },
-    { label: 'Results', href: '/achievements' },
-    { label: 'Contact Us', href: '/contact' },
-  ];
-
-  const tnpscCourses = [
-    { label: 'Group 1', href: '/courses#group1' },
-    { label: 'Group 2', href: '/courses#group2' },
-    { label: 'Group 2A', href: '/courses#group2a' },
-    { label: 'Group 4', href: '/courses#group4' },
-  ];
+  const year = new Date().getFullYear();
+  const address = SITE_CONFIG.address.replace(`${SITE_CONFIG.name}, `, '');
+  const tel = SITE_CONFIG.phone.replace(/\s/g, '');
 
   return (
-    <>
-      {/* Cinematic Knowledge Comes Alive Section */}
-      <CinematicSection />
+    <footer className="bg-[#1E3A8A] text-white">
+      {/* Red band ties the footer to the red top bar in the header */}
+      <div aria-hidden="true" className="h-1.5 bg-[var(--primary)]" />
 
-      {/* Premium Dark Footer */}
-      <footer className="bg-gradient-to-b from-[#0a1f3e] to-[#050d1a] text-gray-300">
-        {/* Main Footer Content */}
-        <div className="container mx-auto px-4 py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-            
-            {/* Column 1: About Blooms */}
-            <div className="space-y-6">
-              {/* Logo */}
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-pink-700 rounded-full flex items-center justify-center shadow-xl relative">
-                  {/* Lotus petals simplified icon */}
-                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M16 8L18 14L22 10L20 16L26 14L22 18L28 20L22 22L24 28L18 24L20 30L16 26L12 30L14 24L8 28L10 22L4 20L10 18L6 14L12 16L10 10L14 14L16 8Z" fill="white"/>
-                    <rect x="12" y="20" width="8" height="4" rx="1" fill="white"/>
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-white" style={{ fontFamily: "'Playfair Display', serif" }}>{SITE_CONFIG.name}</h3>
-                  <p className="text-xs text-pink-300 italic">{SITE_CONFIG.tagline}</p>
-                </div>
-              </div>
-              
-              {/* Description */}
-              <p className="text-sm leading-relaxed text-gray-400">
-                Premier coaching institute for TNPSC examination preparation in Tamil Nadu. 
-                We are committed to providing world-class education and guidance to help students 
-                achieve their dreams of serving Tamil Nadu through government services.
-              </p>
+      <div className="mx-auto w-full max-w-6xl px-5 sm:px-10">
+        {/* Brand row */}
+        <div className="flex flex-col gap-6 border-b border-white/20 py-10 sm:flex-row sm:items-center sm:justify-between">
+          <Link href="/" aria-label={`${SITE_CONFIG.name} home`} className={`flex items-center gap-3 rounded-sm ${focusRing}`}>
+            <span className="flex size-10 items-center justify-center rounded-md bg-[var(--primary)]">
+              <svg width="26" height="26" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                <path
+                  d="M16 8L18 14L22 10L20 16L26 14L22 18L28 20L22 22L24 28L18 24L20 30L16 26L12 30L14 24L8 28L10 22L4 20L10 18L6 14L12 16L10 10L14 14L16 8Z"
+                  fill="white"
+                />
+              </svg>
+            </span>
+            <span>
+              <span className="block font-heading text-lg font-semibold leading-tight">{SITE_CONFIG.name}</span>
+              <span className="block text-[13px] text-white/70">TNPSC coaching, Anna Nagar, Chennai</span>
+            </span>
+          </Link>
 
-              {/* Social Media */}
-              <div>
-                <p className="text-sm font-semibold text-white mb-3">Connect With Us</p>
-                <div className="flex gap-3">
-                  <a
-                    href={SOCIAL_LINKS.facebook}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-white/5 hover:bg-[#3b82f6] border border-white/10 hover:border-[#60a5fa] flex items-center justify-center transition-all duration-300 group"
-                    aria-label="Facebook"
-                  >
-                    <FiFacebook size={18} className="group-hover:text-white" />
-                  </a>
-                  <a
-                    href={SOCIAL_LINKS.twitter}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-white/5 hover:bg-[#3b82f6] border border-white/10 hover:border-[#60a5fa] flex items-center justify-center transition-all duration-300 group"
-                    aria-label="Twitter"
-                  >
-                    <FiTwitter size={18} className="group-hover:text-white" />
-                  </a>
-                  <a
-                    href={SOCIAL_LINKS.instagram}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-white/5 hover:bg-[#3b82f6] border border-white/10 hover:border-[#60a5fa] flex items-center justify-center transition-all duration-300 group"
-                    aria-label="Instagram"
-                  >
-                    <FiInstagram size={18} className="group-hover:text-white" />
-                  </a>
-                  <a
-                    href={SOCIAL_LINKS.youtube}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-white/5 hover:bg-[#3b82f6] border border-white/10 hover:border-[#60a5fa] flex items-center justify-center transition-all duration-300 group"
-                    aria-label="YouTube"
-                  >
-                    <FiYoutube size={18} className="group-hover:text-white" />
-                  </a>
-                  <a
-                    href={SOCIAL_LINKS.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-white/5 hover:bg-[#3b82f6] border border-white/10 hover:border-[#60a5fa] flex items-center justify-center transition-all duration-300 group"
-                    aria-label="LinkedIn"
-                  >
-                    <FiLinkedin size={18} className="group-hover:text-white" />
-                  </a>
-                </div>
-              </div>
-            </div>
+          <a
+            href={`tel:${tel}`}
+            className={`inline-flex w-fit items-center gap-3 rounded-md border border-white/30 px-4 py-2.5 transition-colors duration-150 hover:border-white hover:bg-white/10 motion-reduce:transition-none ${focusRing}`}
+          >
+            <span className="text-[13px] text-white/75">Admissions</span>
+            <span className="font-heading text-lg font-semibold tabular-nums">{SITE_CONFIG.phone}</span>
+          </a>
+        </div>
 
-            {/* Column 2: Quick Links */}
-            <div>
-              <h4 className="text-lg font-bold text-white mb-6 relative inline-block">
-                Quick Links
-                <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-[#3b82f6]"></span>
-              </h4>
-              <ul className="space-y-3">
-                {quickLinks.map((link) => (
-                  <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-gray-400 hover:text-[#60a5fa] hover:translate-x-1 transition-all duration-200 inline-flex items-center gap-2 group"
-                    >
-                      <span className="w-1 h-1 bg-[#3b82f6] rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+        {/* Link columns */}
+        <div className="grid grid-cols-2 gap-x-6 gap-y-8 py-10 md:grid-cols-4 md:gap-x-10">
+          {columns.map((c) => (
+            <FooterColumn key={c.heading} column={c} />
+          ))}
 
-            {/* Column 3: TNPSC Courses */}
-            <div>
-              <h4 className="text-lg font-bold text-white mb-6 relative inline-block">
-                TNPSC Courses
-                <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-[#3b82f6]"></span>
-              </h4>
-              <ul className="space-y-3">
-                {tnpscCourses.map((course) => (
-                  <li key={course.href}>
-                    <Link
-                      href={course.href}
-                      className="text-sm text-gray-400 hover:text-[#60a5fa] hover:translate-x-1 transition-all duration-200 inline-flex items-center gap-2 group"
-                    >
-                      <span className="w-1 h-1 bg-[#3b82f6] rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                      {course.label}
-                    </Link>
-                  </li>
-                ))}
-                <li className="pt-2">
-                  <Link
-                    href="/courses"
-                    className="text-sm text-[#60a5fa] hover:text-white font-semibold inline-flex items-center gap-1 hover:gap-2 transition-all"
-                  >
-                    View All Courses
-                    <span>→</span>
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Column 4: Connect With Us */}
-            <div>
-              <h4 className="text-lg font-bold text-white mb-6 relative inline-block">
-                Connect With Us
-                <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-[#3b82f6]"></span>
-              </h4>
-              <ul className="space-y-4">
-                <li className="flex items-start gap-3 group">
-                  <div className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 group-hover:border-[#60a5fa] flex items-center justify-center flex-shrink-0 transition-all">
-                    <FiPhone className="text-[#3b82f6]" size={18} />
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500 mb-1">Call Us</p>
-                    <a 
-                      href={`tel:${SITE_CONFIG.phone}`} 
-                      className="text-sm text-gray-300 hover:text-[#60a5fa] transition-colors font-medium"
-                    >
-                      {SITE_CONFIG.phone}
-                    </a>
-                  </div>
-                </li>
-                
-                <li className="flex items-start gap-3 group">
-                  <div className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 group-hover:border-[#60a5fa] flex items-center justify-center flex-shrink-0 transition-all">
-                    <FiMail className="text-[#3b82f6]" size={18} />
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500 mb-1">Email Us</p>
-                    <a 
-                      href={`mailto:${SITE_CONFIG.email}`} 
-                      className="text-sm text-gray-300 hover:text-[#60a5fa] transition-colors break-all"
-                    >
-                      {SITE_CONFIG.email}
-                    </a>
-                  </div>
-                </li>
-                
-                <li className="flex items-start gap-3 group">
-                  <div className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 group-hover:border-[#60a5fa] flex items-center justify-center flex-shrink-0 transition-all">
-                    <FiMapPin className="text-[#3b82f6]" size={18} />
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500 mb-1">Visit Us</p>
-                    <p className="text-sm text-gray-300 leading-relaxed">
-                      {SITE_CONFIG.address}
-                    </p>
-                  </div>
-                </li>
-              </ul>
-            </div>
+          <div className="col-span-2 min-w-0 md:col-span-1">
+            <h2 className={headingClass}>Visit us</h2>
+            <address className="py-2 text-[14px] not-italic leading-6 text-white/80">{address}</address>
+            <a href={`mailto:${SITE_CONFIG.email}`} className={`${linkClass} break-all`}>
+              {SITE_CONFIG.email}
+            </a>
           </div>
         </div>
 
-        {/* Bottom Copyright Bar */}
-        <div className="border-t border-white/5">
-          <div className="container mx-auto px-4 py-6">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-              <p className="text-gray-500 text-center md:text-left">
-                © {currentYear} <span className="text-[#60a5fa] font-semibold">{SITE_CONFIG.name}</span>. All rights reserved.
-              </p>
-              <div className="flex flex-wrap justify-center gap-6">
-                <Link 
-                  href="/terms" 
-                  className="text-gray-500 hover:text-[#60a5fa] transition-colors"
+        {/* Social row */}
+        {social.length > 0 && (
+          <ul className="-ml-2.5 flex items-center gap-2 border-t border-white/20 py-2">
+            {social.map(({ name, href, Icon }) => (
+              <li key={name}>
+                <a
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${SITE_CONFIG.name} on ${name}`}
+                  className={`flex size-11 items-center justify-center rounded-md text-white/80 transition-colors duration-150 hover:bg-white/10 hover:text-white motion-reduce:transition-none ${focusRing}`}
                 >
-                  Terms & Conditions
-                </Link>
-                <span className="text-gray-700">|</span>
-                <Link 
-                  href="/privacy" 
-                  className="text-gray-500 hover:text-[#60a5fa] transition-colors"
-                >
-                  Privacy Policy
-                </Link>
-              </div>
-            </div>
-          </div>
+                  <Icon size={18} aria-hidden="true" />
+                </a>
+              </li>
+            ))}
+          </ul>
+        )}
+
+        {/* Legal bar */}
+        <div className="flex flex-col gap-2 border-t border-white/20 py-6 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-[14px] font-medium text-white">
+            © {year} {SITE_CONFIG.name}
+          </p>
+          <p className="text-[13px] text-white/70">Coaching for TNPSC Group I, II, IIA, IV and VAO</p>
         </div>
-      </footer>
-    </>
+      </div>
+    </footer>
   );
 }
