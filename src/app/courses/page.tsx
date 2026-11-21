@@ -5,8 +5,6 @@ import { Header, FooterNew } from '@/components/layout';
 import { Section, SectionHeader } from '@/components/ui';
 import CourseCard from '@/components/modules/CourseCard';
 import { courses } from '@/data/courses';
-import ParticleConstellation from '@/components/ui/ParticleConstellation';
-import CubeTunnel from '@/components/ui/CubeTunnel';
 
 export default function CoursesPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
@@ -22,7 +20,7 @@ export default function CoursesPage() {
       <Header />
       <main className="flex-1">
         {/* Page Header */}
-        <section className="bg-gradient-to-br from-blue-50 to-purple-50 py-20">
+        <section className="bg-[var(--light)] py-20">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl font-bold text-[var(--dark)] mb-4">
@@ -35,9 +33,6 @@ export default function CoursesPage() {
             </div>
           </div>
         </section>
-
-        <ParticleConstellation />
-
         {/* Course Filters */}
         <Section background="white" padding="md">
           <div className="flex flex-wrap justify-center gap-3 mb-12">
@@ -78,11 +73,8 @@ export default function CoursesPage() {
             </div>
           )}
         </Section>
-
-        <CubeTunnel />
-
         {/* CTA Section */}
-        <section className="bg-gradient-to-br from-[var(--primary)] to-[var(--color-blue-900)] text-white py-16">
+        <section className="bg-gradient-to-br from-red-700 to-red-900 text-white py-16">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Can&apos;t Find What You&apos;re Looking For?

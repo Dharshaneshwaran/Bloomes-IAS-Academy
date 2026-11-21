@@ -123,7 +123,7 @@ export default function Header() {
                           <Link
                             key={dropdownItem.href}
                             href={dropdownItem.href}
-                            className="block px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-[var(--primary)] transition-colors border-b border-gray-100 last:border-b-0"
+                            className="block px-4 py-3 text-sm text-gray-700 hover:bg-red-50 hover:text-[var(--primary)] transition-colors border-b border-gray-100 last:border-b-0"
                           >
                             {dropdownItem.label}
                           </Link>

@@ -24,15 +24,15 @@ export default function SectionHeader({
   return (
     <div className={`mb-12 ${alignStyles[align]} ${className}`}>
       {subtitle && (
-        <p className="text-[var(--accent)] font-semibold text-sm uppercase tracking-wider mb-2">
+        <p className="text-red-700 font-semibold text-xs uppercase tracking-[0.14em] mb-3">
           {subtitle}
         </p>
       )}
-      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--dark)] mb-4">
+      <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">
         {title}
       </h2>
       {description && (
-        <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+        <p className="text-gray-600 text-base md:text-lg max-w-2xl mx-auto">
           {description}
         </p>
       )}

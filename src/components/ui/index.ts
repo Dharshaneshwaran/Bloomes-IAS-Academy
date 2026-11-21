@@ -6,3 +6,4 @@ export { default as Loading } from './Loading';
 export { default as Input } from './Input';
 export { default as Textarea } from './Textarea';
 export { default as AnimatedBackground } from './AnimatedBackground';
+export { default as IconTile } from './IconTile';

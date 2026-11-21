@@ -2,8 +2,6 @@ import React from 'react';
 import { Header, FooterNew } from '@/components/layout';
 import { Section, SectionHeader, Card, AnimatedBackground } from '@/components/ui';
 import { FiTarget, FiEye, FiHeart, FiAward, FiUsers, FiBookOpen } from 'react-icons/fi';
-import MatrixEducationRain from '@/components/ui/MatrixEducationRain';
-import CubeTunnel from '@/components/ui/CubeTunnel';
 
 export default function AboutPage() {
   const values = [
@@ -66,7 +64,7 @@ export default function AboutPage() {
       <Header />
       <main className="flex-1">
         {/* Page Header */}
-        <section className="relative bg-gradient-to-br from-blue-50 to-purple-50 py-20 overflow-hidden">
+        <section className="relative bg-[var(--light)] py-20 overflow-hidden">
           <AnimatedBackground density="medium" theme="blue" />
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-3xl mx-auto text-center">
@@ -83,7 +81,6 @@ export default function AboutPage() {
 
         {/* Our Story */}
         <Section background="white">
-          <AnimatedBackground density="light" theme="orange" />
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
             <div>
               <h2 className="text-3xl font-bold text-[var(--dark)] mb-6">
@@ -132,12 +129,8 @@ export default function AboutPage() {
             </div>
           </div>
         </Section>
-
-        <MatrixEducationRain />
-
         {/* Mission & Vision */}
         <Section background="light">
-          <AnimatedBackground density="light" theme="mixed" />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
             <Card className="text-center">
               <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-[var(--primary)] to-[var(--secondary)] rounded-full text-white mb-6">
@@ -178,7 +171,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((value, index) => (
               <Card key={index} className="text-center" hover={true}>
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-50 rounded-full text-[var(--primary)] mb-4">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-red-50 rounded-full text-[var(--primary)] mb-4">
                   {value.icon}
                 </div>
                 <h4 className="text-xl font-bold text-[var(--dark)] mb-3">{value.title}</h4>
@@ -227,9 +220,6 @@ export default function AboutPage() {
             </div>
           </div>
         </Section>
-
-        <CubeTunnel />
-
         {/* Leadership Team */}
         <Section background="white">
           <SectionHeader
@@ -255,7 +245,7 @@ export default function AboutPage() {
         </Section>
 
         {/* CTA Section */}
-        <section className="bg-gradient-to-br from-[var(--primary)] to-[var(--color-blue-900)] text-white py-16">
+        <section className="bg-gradient-to-br from-red-700 to-red-900 text-white py-16">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Ready to Begin Your Journey?

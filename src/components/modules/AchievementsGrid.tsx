@@ -33,7 +33,7 @@ export default function AchievementsGrid({ achievements, showAll = true }: Achie
           hover={true}
         >
           {/* Background Gradient */}
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-purple-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-red-50 to-orange-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           
           <div className="relative z-10">
             {/* Icon */}

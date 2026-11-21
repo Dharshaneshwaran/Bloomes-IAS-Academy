@@ -39,17 +39,17 @@ export default function CinematicSection() {
   if (!mounted) return null;
 
   return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-b from-[#0a1a3e] via-[#1e3a8a] to-[#1e40af] py-16 md:py-20">
+    <section className="relative w-full overflow-hidden bg-[#0a1f3e] py-16 md:py-20">
       {/* Ambient Background Glow - Softer */}
       <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#3b82f6] rounded-full blur-[150px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#b91c1c] rounded-full blur-[150px]" />
       </div>
 
       {/* Smoother Floating Particles */}
       {!shouldReduceMotion && particles.map((particle) => (
         <motion.div
           key={`particle-${particle.id}`}
-          className="absolute w-1.5 h-1.5 bg-[#60a5fa]/60 rounded-full"
+          className="absolute w-1.5 h-1.5 bg-[#fca5a5]/60 rounded-full"
           style={{
             left: `${particle.x}%`,
             top: '75%',
@@ -172,14 +172,14 @@ export default function CinematicSection() {
                   }
                 })}
               >
-                <div className="absolute inset-0 bg-[#3b82f6] rounded-full blur-3xl" />
+                <div className="absolute inset-0 bg-[#b91c1c] rounded-full blur-3xl" />
               </motion.div>
 
               {/* Softer Light Rays */}
               {!shouldReduceMotion && [...Array(5)].map((_, i) => (
                 <motion.div
                   key={`ray-${i}`}
-                  className="absolute left-1/2 bottom-1/2 w-0.5 bg-gradient-to-t from-[#60a5fa]/40 to-transparent origin-bottom"
+                  className="absolute left-1/2 bottom-1/2 w-0.5 bg-gradient-to-t from-[#fca5a5]/40 to-transparent origin-bottom"
                   style={{
                     height: '140px',
                     transform: `translateX(-50%) rotate(${(i - 2) * 15}deg)`,
@@ -263,14 +263,14 @@ export default function CinematicSection() {
                 transition: { duration: 1, delay: 1.2, ease: [0.4, 0.0, 0.2, 1] }
               })}
             >
-              <span className="bg-gradient-to-r from-[#a5d8ff] via-[#74c0fc] to-[#a5d8ff] bg-clip-text text-transparent">
+              <span className="text-white">
                 KNOWLEDGE IS THE BEGINNING OF EVERY GREAT JOURNEY
               </span>
             </motion.h2>
 
             {/* Supporting Text */}
             <motion.p
-              className="text-base md:text-lg text-[#a5d8ff]/90 max-w-2xl mx-auto px-4"
+              className="text-base md:text-lg text-white/90 max-w-2xl mx-auto px-4"
               style={{
                 textShadow: '0 2px 12px rgba(0, 0, 0, 0.4)',
               }}

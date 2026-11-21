@@ -8,6 +8,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        ink: '#1A1C23',
+        mist: '#F4F5F8',
+        rule: '#E3E5EB',
+        navy: { DEFAULT: '#1E3A8A', deep: '#172554' },
         background: "var(--background)",
         foreground: "var(--foreground)",
         primary: {
@@ -31,8 +35,9 @@ module.exports = {
         dark: "var(--dark)",
       },
       fontFamily: {
-        sans: ['IBM Plex Sans', 'sans-serif'],
-        display: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+        heading: ['var(--font-anek)', 'Anek Tamil', 'IBM Plex Sans', 'sans-serif'],
+        sans: ['var(--font-plex)', 'IBM Plex Sans', 'sans-serif'],
+        display: ['var(--font-inter)', 'Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
       },
       letterSpacing: {
         tighter: '-0.05em',

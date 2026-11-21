@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { IBM_Plex_Sans, Inter, Anek_Tamil } from "next/font/google";
+
+const plex = IBM_Plex_Sans({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700"], variable: "--font-plex", display: "swap" });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
+const anek = Anek_Tamil({ subsets: ["latin", "tamil"], axes: ["wdth"], variable: "--font-anek", display: "swap" });
 
 export const metadata: Metadata = {
   title: "Blooms IAS Academy - Where Success Blooms | Best TNPSC Coaching in Tamil Nadu",
@@ -13,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="h-full antialiased">
+    <html lang="en" className={`h-full antialiased ${plex.variable} ${inter.variable} ${anek.variable}`}>
       <head>
         <link rel="icon" href="/favicon.ico" />
         {/* Elegant Serif Font for Branding */}

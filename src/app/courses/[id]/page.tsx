@@ -40,9 +40,9 @@ function CourseContent() {
       <Header />
       <main className="flex-1">
         {/* Course Header */}
-        <section className="bg-gradient-to-br from-blue-50 to-purple-50 py-12">
+        <section className="bg-[var(--light)] py-12">
           <div className="container mx-auto px-4">
-            <Link href="/courses" className="inline-flex items-center gap-2 text-[var(--primary)] hover:text-[var(--color-blue-900)] mb-6 font-semibold">
+            <Link href="/courses" className="inline-flex items-center gap-2 text-[var(--primary)] hover:text-red-900 mb-6 font-semibold">
               <FiArrowLeft />
               Back to Courses
             </Link>
@@ -92,7 +92,7 @@ function CourseContent() {
 
                   <div className="pt-6 border-t space-y-3">
                     <a href="tel:9003190030" className="flex items-center gap-3 text-gray-700 hover:text-[var(--primary)] transition">
-                      <div className="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center">
+                      <div className="w-10 h-10 bg-red-50 rounded-full flex items-center justify-center">
                         <FiPhone size={18} />
                       </div>
                       <div className="text-left">
@@ -101,7 +101,7 @@ function CourseContent() {
                       </div>
                     </a>
                     <a href="mailto:info@bloomsacademy.com" className="flex items-center gap-3 text-gray-700 hover:text-[var(--primary)] transition">
-                      <div className="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center">
+                      <div className="w-10 h-10 bg-red-50 rounded-full flex items-center justify-center">
                         <FiMail size={18} />
                       </div>
                       <div className="text-left">
@@ -142,7 +142,7 @@ function CourseContent() {
                 <h2 className="text-2xl font-bold text-[var(--dark)] mb-6">
                   Course Overview
                 </h2>
-                <div className="prose prose-lg max-w-none text-gray-700">
+                <div className="prose pred-lg max-w-none text-gray-700">
                   <p>
                     This comprehensive course is designed to provide you with all the knowledge, 
                     skills, and strategies needed to excel in {course.category} examinations. 
@@ -273,7 +273,7 @@ export default function CourseDetailPage() {
     <Suspense fallback={
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-red-700 mx-auto mb-4"></div>
           <p className="text-gray-600">Loading course...</p>
         </div>
       </div>

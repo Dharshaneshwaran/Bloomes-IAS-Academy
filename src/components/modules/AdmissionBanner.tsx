@@ -139,7 +139,7 @@ export default function AdmissionBanner() {
       </div>
 
       {/* Bottom Decorative Line */}
-      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-red-600 via-blue-600 to-red-600" />
+      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-red-600 to-red-800" />
     </section>
   );
 }

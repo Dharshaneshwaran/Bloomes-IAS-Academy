@@ -12,7 +12,7 @@ export default function CourseCard({ course }: CourseCardProps) {
   return (
     <Card className="h-full flex flex-col">
       {/* Course Image */}
-      <div className="relative h-40 bg-gradient-to-br from-blue-100 to-purple-100 rounded-t-lg -m-6 mb-6">
+      <div className="relative h-40 bg-gradient-to-br from-red-50 to-orange-100 rounded-t-lg -m-6 mb-6">
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center">
             <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-2 shadow-lg">

@@ -24,7 +24,7 @@ export default function Section({
     none: '',
     sm: 'py-8',
     md: 'py-12 md:py-16',
-    lg: 'py-16 md:py-24',
+    lg: 'py-16 md:py-20',
   };
 
   return (

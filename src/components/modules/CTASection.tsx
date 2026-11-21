@@ -1,13 +1,13 @@
 'use client';
 
 import React from 'react';
-import { FiArrowRight, FiPhone } from 'react-icons/fi';
+import { LuArrowRight, LuPhone } from "react-icons/lu";
 import { Button } from '@/components/ui';
 import { SITE_CONFIG } from '@/constants';
 
 export default function CTASection() {
   return (
-    <section className="relative bg-gradient-to-br from-[var(--primary)] to-[var(--color-blue-900)] text-white py-16 overflow-hidden">
+    <section className="relative bg-gradient-to-br from-red-700 to-red-900 text-white py-16 md:py-20 overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
@@ -27,20 +27,16 @@ export default function CTASection() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
-            <Button 
-              variant="secondary" 
-              size="lg"
-              href="/admission"
-            >
+            <Button variant="ghost" size="lg" href="/admission" className="!bg-white !text-red-700 hover:!bg-red-50">
               Apply for Admission
-              <FiArrowRight className="ml-2" size={18} />
+              <LuArrowRight className="ml-2" size={18} />
             </Button>
             <a 
               href={`tel:${SITE_CONFIG.phone}`}
-              className="inline-flex items-center gap-2 text-white hover:text-[var(--accent)] transition"
+              className="inline-flex items-center gap-2 text-white hover:text-red-100 transition"
             >
               <div className="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
-                <FiPhone size={18} />
+                <LuPhone size={18} />
               </div>
               <div className="text-left">
                 <p className="text-xs opacity-75">Call Us Now</p>
@@ -69,10 +65,6 @@ export default function CTASection() {
           </div>
         </div>
       </div>
-
-      {/* Decorative Elements */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-white opacity-5 rounded-full translate-y-1/2 -translate-x-1/2"></div>
     </section>
   );
 }

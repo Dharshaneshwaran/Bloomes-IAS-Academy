@@ -8,23 +8,23 @@ interface StatsBannerProps {
 
 export default function StatsBanner({ variant = 'blue' }: StatsBannerProps) {
   const variants = {
-    blue: 'from-blue-100 via-blue-50 to-blue-100',
-    purple: 'from-purple-100 via-purple-50 to-purple-100',
-    emerald: 'from-emerald-100 via-emerald-50 to-emerald-100',
+    blue: 'from-orange-50 via-white to-orange-50',
+    purple: 'from-orange-100 via-orange-50 to-orange-100',
+    emerald: 'from-orange-50 via-white to-orange-50',
     orange: 'from-orange-100 via-orange-50 to-orange-100'
   };
 
   const iconColors = {
-    blue: 'text-blue-600',
-    purple: 'text-purple-600',
-    emerald: 'text-emerald-600',
+    blue: 'text-red-700',
+    purple: 'text-red-700',
+    emerald: 'text-red-700',
     orange: 'text-orange-600'
   };
 
   const textColors = {
-    blue: 'text-blue-600',
-    purple: 'text-purple-600',
-    emerald: 'text-emerald-600',
+    blue: 'text-red-700',
+    purple: 'text-red-700',
+    emerald: 'text-red-700',
     orange: 'text-orange-600'
   };
 

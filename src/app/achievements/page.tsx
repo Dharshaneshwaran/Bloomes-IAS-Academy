@@ -11,7 +11,7 @@ export default function AchievementsPage() {
       <Header />
       <main className="flex-1">
         {/* Page Header */}
-        <section className="relative bg-gradient-to-br from-blue-50 to-purple-50 py-20 overflow-hidden">
+        <section className="relative bg-[var(--light)] py-20 overflow-hidden">
           <AnimatedBackground density="medium" theme="blue" />
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-3xl mx-auto text-center">
@@ -31,7 +31,6 @@ export default function AchievementsPage() {
 
         {/* Main Achievements */}
         <Section background="white">
-          <AnimatedBackground density="light" theme="mixed" />
           <div className="relative z-10">
             <SectionHeader
               subtitle="Success Stories"
@@ -88,7 +87,7 @@ export default function AchievementsPage() {
                 className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden group"
               >
                 {/* Image Placeholder */}
-                <div className="relative h-64 bg-gradient-to-br from-blue-100 to-purple-100">
+                <div className="relative h-64 bg-gradient-to-br from-red-50 to-orange-100">
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="w-32 h-32 rounded-full bg-white shadow-lg flex items-center justify-center">
                       <span className="text-5xl font-bold text-[var(--primary)]">
@@ -120,7 +119,7 @@ export default function AchievementsPage() {
         </Section>
 
         {/* CTA Section */}
-        <section className="bg-gradient-to-br from-[var(--primary)] to-[var(--color-blue-900)] text-white py-16">
+        <section className="bg-gradient-to-br from-red-700 to-red-900 text-white py-16">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Be the Next Success Story

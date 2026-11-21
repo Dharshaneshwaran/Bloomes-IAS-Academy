@@ -1,135 +1,63 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { LuLibrary, LuMapPin, LuTrophy, LuBadgeCheck, LuUsers, LuInfinity, LuArrowRight } from 'react-icons/lu';
+import IconTile from './IconTile';
 
 export default function FoundationBanner() {
   const features = [
-    {
-      icon: '📚',
-      title: 'STUDY CENTER',
-      description: 'Comprehensive materials for TNPSC aspirants in Tamil & English'
-    },
-    {
-      icon: '🎯',
-      title: 'TAMIL NADU',
-      description: 'Specialized coaching for all TNPSC Group exams'
-    },
-    {
-      icon: '🏆',
-      title: 'SUCCESS PORTAL',
-      description: 'Proven methods and techniques from top rankers'
-    },
-    {
-      icon: '💯',
-      title: '100% RESULTS',
-      description: 'Guaranteed preparation with mock tests and analysis'
-    },
-    {
-      icon: '👥',
-      title: 'EXPERT MENTORS',
-      description: 'Personal guidance from experienced TNPSC faculty'
-    },
-    {
-      icon: '⭐',
-      title: 'PREMIUM ACCESS',
-      description: 'Lifetime access to all study materials and updates'
-    }
+    { icon: LuLibrary, title: 'Study Center', description: 'Comprehensive materials for TNPSC aspirants in Tamil & English' },
+    { icon: LuMapPin, title: 'Tamil Nadu', description: 'Specialized coaching for all TNPSC Group exams' },
+    { icon: LuTrophy, title: 'Success Portal', description: 'Proven methods and techniques from top rankers' },
+    { icon: LuBadgeCheck, title: '100% Results', description: 'Guaranteed preparation with mock tests and analysis' },
+    { icon: LuUsers, title: 'Expert Mentors', description: 'Personal guidance from experienced TNPSC faculty' },
+    { icon: LuInfinity, title: 'Premium Access', description: 'Lifetime access to all study materials and updates' },
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 relative overflow-hidden">
-      {/* Animated Background Pattern */}
-      <motion.div 
-        animate={{ 
-          backgroundPosition: ['0% 0%', '100% 100%'],
-        }}
-        transition={{ 
-          duration: 20,
-          repeat: Infinity,
-          ease: "linear"
-        }}
-        className="absolute inset-0 opacity-10"
-        style={{
-          backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.1) 10px, rgba(255,255,255,0.1) 20px)',
-          backgroundSize: '200% 200%'
-        }}
-      ></motion.div>
+    <section className="py-16 md:py-20 bg-[#13204a] relative overflow-hidden">
+      {/* Single soft red glow for depth */}
+      <div className="pointer-events-none absolute -top-32 right-0 w-[480px] h-[480px] rounded-full bg-red-700/20 blur-3xl" />
 
       <div className="container mx-auto px-4 relative z-10">
-        {/* Header */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-4xl md:text-5xl font-black text-white mb-3 tracking-tight">
-            THE BLOOMS FOUNDATION
-          </h2>
-          <p className="text-white/80 text-lg font-medium max-w-3xl mx-auto">
-            FILLING THE GAPS
-          </p>
-          <p className="text-white/70 text-sm mt-2 max-w-4xl mx-auto leading-relaxed">
-            Blooms Academy should lead the way in filling the gaps for TNPSC aspirants. Our mission is to invest millions 
+        <div className="text-center mb-12 max-w-3xl mx-auto">
+          <p className="text-red-300 font-semibold text-xs uppercase tracking-[0.14em] mb-3">Filling the gaps</p>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">The Blooms Foundation</h2>
+          <p className="text-white/70 text-base leading-relaxed">
+            Blooms Academy should lead the way in filling the gaps for TNPSC aspirants. Our mission is to invest millions
             toward TNPSC preparation and meeting the needs of students around Tamil Nadu.
           </p>
-        </motion.div>
+        </div>
 
-        {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
           {features.map((feature, index) => (
             <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.8, y: 20 }}
-              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              key={feature.title}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ 
-                scale: 1.05,
-                transition: { duration: 0.2 }
-              }}
-              className={`
-                ${index % 2 === 0 ? 'bg-white' : 'bg-gradient-to-br from-red-500 to-red-600'}
-                p-6 rounded-lg border-4 border-white/20 relative overflow-hidden
-                ${index % 2 === 0 ? 'text-gray-900' : 'text-white'}
-              `}
+              transition={{ duration: 0.4, delay: index * 0.05 }}
+              className="flex gap-4 rounded-2xl p-6 bg-white/[0.04] border border-white/10 hover:bg-white/[0.07] hover:border-white/20 transition-colors duration-200"
             >
-              {/* Corner accent */}
-              <div className={`absolute top-0 right-0 w-16 h-16 ${index % 2 === 0 ? 'bg-blue-500/10' : 'bg-white/10'} rounded-bl-3xl`}></div>
-              
-              {/* Icon */}
-              <div className="text-4xl mb-3">{feature.icon}</div>
-              
-              {/* Title */}
-              <div className={`text-xs font-black tracking-wider mb-2 ${index % 2 === 0 ? 'text-blue-600' : 'text-white'}`}>
-                {feature.title}
+              <IconTile icon={feature.icon} tone="solidRed" />
+              <div>
+                <h3 className="text-white font-bold text-base mb-1">{feature.title}</h3>
+                <p className="text-white/70 text-sm leading-relaxed">{feature.description}</p>
               </div>
-              
-              {/* Description */}
-              <p className={`text-sm font-medium leading-snug ${index % 2 === 0 ? 'text-gray-700' : 'text-white/90'}`}>
-                {feature.description}
-              </p>
             </motion.div>
           ))}
         </div>
 
-        {/* Bottom Link */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="text-center mt-8"
-        >
-          <a 
-            href="/about" 
-            className="text-white/80 text-sm font-bold hover:text-white transition-colors underline"
+        <div className="text-center mt-10">
+          <Link
+            href="/about"
+            className="inline-flex items-center gap-2 text-white font-semibold text-sm hover:text-red-200 transition-colors"
           >
-            bloomsacademy.com/foundation
-          </a>
-        </motion.div>
+            Learn about the foundation <LuArrowRight size={16} />
+          </Link>
+        </div>
       </div>
     </section>
   );

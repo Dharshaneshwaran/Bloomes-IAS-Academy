@@ -24,11 +24,11 @@ export default function Button({
   className = '',
   fullWidth = false,
 }: ButtonProps) {
-  const baseStyles = 'inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-300 cursor-pointer border-2';
+  const baseStyles = 'inline-flex items-center justify-center font-semibold rounded-xl transition-all duration-200 cursor-pointer border-2';
   
   const variantStyles = {
-    primary: 'bg-[var(--primary)] text-white border-[var(--primary)] hover:bg-[var(--color-blue-900)] hover:border-[var(--color-blue-900)] hover:shadow-lg hover:-translate-y-0.5',
-    secondary: 'bg-[var(--secondary)] text-white border-[var(--secondary)] hover:bg-[var(--color-red-700)] hover:border-[var(--color-red-700)] hover:shadow-lg hover:-translate-y-0.5',
+    primary: 'bg-[var(--primary)] text-white border-[var(--primary)] hover:bg-red-800 hover:border-red-800 hover:shadow-lg hover:-translate-y-0.5',
+    secondary: 'bg-[var(--secondary)] text-white border-[var(--secondary)] hover:bg-blue-950 hover:border-blue-950 hover:shadow-lg hover:-translate-y-0.5',
     outline: 'bg-transparent text-[var(--primary)] border-[var(--primary)] hover:bg-[var(--primary)] hover:text-white hover:shadow-lg',
     ghost: 'bg-transparent text-[var(--dark)] border-transparent hover:bg-gray-100',
   };

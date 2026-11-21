@@ -11,7 +11,7 @@ export default function TestimonialsPage() {
       <Header />
       <main className="flex-1">
         {/* Page Header */}
-        <section className="relative bg-gradient-to-br from-blue-50 to-purple-50 py-20 overflow-hidden">
+        <section className="relative bg-[var(--light)] py-20 overflow-hidden">
           <AnimatedBackground density="medium" theme="blue" />
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-3xl mx-auto text-center">
@@ -33,7 +33,7 @@ export default function TestimonialsPage() {
         <Section background="white" padding="md">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
             <div className="text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-50 rounded-full mb-3">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-red-50 rounded-full mb-3">
                 <FiStar className="text-[var(--primary)]" size={28} />
               </div>
               <p className="text-3xl font-bold text-[var(--primary)] mb-1">4.9/5</p>
@@ -47,7 +47,7 @@ export default function TestimonialsPage() {
               <p className="text-sm text-gray-600">Happy Students</p>
             </div>
             <div className="text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-amber-50 rounded-full mb-3">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-orange-50 rounded-full mb-3">
                 <FiStar className="text-[var(--accent)]" size={28} />
               </div>
               <p className="text-3xl font-bold text-[var(--accent)] mb-1">98%</p>
@@ -84,7 +84,7 @@ export default function TestimonialsPage() {
             {[1, 2, 3].map((index) => (
               <div
                 key={index}
-                className="bg-gradient-to-br from-blue-100 to-purple-100 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow aspect-video flex items-center justify-center group cursor-pointer"
+                className="bg-gradient-to-br from-red-50 to-orange-100 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow aspect-video flex items-center justify-center group cursor-pointer"
               >
                 <div className="text-center">
                   <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform">
@@ -104,7 +104,7 @@ export default function TestimonialsPage() {
         </Section>
 
         {/* CTA Section */}
-        <section className="bg-gradient-to-br from-[var(--primary)] to-[var(--color-blue-900)] text-white py-16">
+        <section className="bg-gradient-to-br from-red-700 to-red-900 text-white py-16">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Ready to Write Your Success Story?

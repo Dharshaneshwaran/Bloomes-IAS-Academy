@@ -74,7 +74,7 @@ export default function ContactPage() {
       <Header />
       <main className="flex-1">
         {/* Page Header */}
-        <section className="relative bg-gradient-to-br from-blue-50 to-purple-50 py-20 overflow-hidden">
+        <section className="relative bg-[var(--light)] py-20 overflow-hidden">
           <AnimatedBackground density="medium" theme="blue" />
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-3xl mx-auto text-center">
@@ -206,7 +206,7 @@ export default function ContactPage() {
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 bg-red-50 rounded-lg flex items-center justify-center flex-shrink-0">
                       <FiPhone className="text-[var(--primary)]" size={20} />
                     </div>
                     <div>
@@ -246,7 +246,7 @@ export default function ContactPage() {
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-amber-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 bg-orange-50 rounded-lg flex items-center justify-center flex-shrink-0">
                       <FiClock className="text-[var(--accent)]" size={20} />
                     </div>
                     <div>
@@ -258,7 +258,7 @@ export default function ContactPage() {
                 </div>
               </Card>
 
-              <Card className="bg-gradient-to-br from-[var(--primary)] to-[var(--color-blue-900)] text-white">
+              <Card className="bg-gradient-to-br from-red-700 to-red-900 text-white">
                 <h3 className="text-xl font-bold mb-3">Need Immediate Help?</h3>
                 <p className="mb-4 opacity-90">
                   Call us directly for quick assistance and admission guidance.
@@ -309,7 +309,7 @@ export default function ContactPage() {
             ].map((branch, index) => (
               <Card key={index} hover={true}>
                 <div className="flex items-start gap-3">
-                  <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 bg-red-50 rounded-lg flex items-center justify-center flex-shrink-0">
                     <FiMapPin className="text-[var(--primary)]" size={20} />
                   </div>
                   <div>

@@ -20,7 +20,7 @@ export default function AnimatedBackground({
   const getThemeColors = () => {
     switch (theme) {
       case 'blue':
-        return { primary: 'blue', secondary: 'indigo' };
+        return { primary: 'blue', secondary: 'red' };
       case 'orange':
         return { primary: 'orange', secondary: 'red' };
       default:
